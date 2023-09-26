@@ -30,17 +30,17 @@ app.get('/', (req, res) => {
     res.render("index.hbs")
   });
 
-  app.get("/artist-search", (req, res) => {
-      const searchArtist = req.query.artist;
+app.get("/artist-search", (req, res) => {
+    const searchArtist = req.query.artist;
 
-      spotifyApi
-      .searchArtists(searchArtist)
-      .then(data => {
-        console.log('The received data from the API: ', data.body);
-        const artists = data.artists;
-        res.render("artist-search-results.hbs", { artists });
-      })
-      .catch(err => console.log('The error while searching artists occurred: ', err))
-  });
+    spotifyApi
+    .searchArtists(searchArtist)
+    .then(data => {
+    console.log('The received data from the API: ', data.body);
+    const artists = data.body.artists;
+    res.render("artist-search-results.hbs", { artists });
+    })
+    .catch(err => console.log('The error while searching artists occurred: ', err))
+});
 
 app.listen(3000, () => console.log('My Spotify project running on port 3000 🎧 🥁 🎸 🔊'));
