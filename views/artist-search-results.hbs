@@ -1,13 +1,14 @@
 <ul>
-  {{#each artists.items}}
+  {{#each artists}}
     <li>
-      <img src="{{images.[0].url}}" alt="{{name}}">
+      <img src="{{images.1.url}}" alt="{{name}}">
       <br>
-      Name: {{name}}
+      <h3>Name: {{name}}</h3>
       <br>
-      <button>
-        <a href="/albums/{{id}}">View Albums</a>
-      </button>
+        <a href="/albums/{{id}}">
+            <button>View Albums</button>
+        </a>
     </li>
+    <br>
   {{/each}}
 </ul>

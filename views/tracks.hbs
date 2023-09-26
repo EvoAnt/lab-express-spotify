@@ -1,0 +1,19 @@
+
+  {{#each tracks}}
+    
+      
+      <br>
+      <h3>Name: {{name}}</h3>
+      <br>
+      {{#if preview_url}}
+
+        <audio src="{{preview_url}}" controls></audio>
+
+      {{else}}
+
+        <p>No track preview found</p>
+        
+      {{/if}}
+   
+  {{/each}}
+
